@@ -1,0 +1,24 @@
+<script src="underscore-min.js"></script>
+<!-- <script src="romanisations.js"></script> -->
+<script src="mya2ipa.js"></script>
+<script>
+var vowels_sorted = _.sortBy(_.pairs(vowels), 
+		      function(item) { 
+				      return item[0].length; 
+		      }
+		    ).reverse();
+
+var vowels_obj = _.object(vowels_sorted);
+
+console.info(vowels_obj);
+
+var arr_str = "";
+for (letter in vowels_obj){
+  arr_str += "\"" + letter + "\"\t\t:\t\t\"";
+  arr_str += vowels_obj[letter]//.join("\" , \"");
+  arr_str += "\",<br>";
+}
+
+document.write("<pre>" + arr_str + "</pre>");
+
+</script>

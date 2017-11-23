@@ -1,0 +1,80 @@
+<html>
+<meta charset="utf-8">
+<head>
+<style>
+input, textarea {padding: 10; margin: 0}
+input {box-sizing: border-box;}
+#mya_word {font-family: "Noto Sans Myanmar"; box-sizing: border-box; height: 120px; font-size: 1.5em}
+#ipa_field {font-family: "Linux Libertine"; font-size: 2em; width: 100%}
+</style>
+</head>
+<body>
+<h1>MYA Romanisation/Transcription</h1>
+<b>Experimental</b> (Using <b><span id="version">{version}</span></b>)<br>
+<p>05 Jul 2017: Now "nice alternates" are provided, and use by default.</p>
+<p>17 May 2017: MLCTS and SEALang's MLCTS implemented; simple romanisation implemented as well!</p>
+<p>04 May 2017: you no longer have to manually pre-split the words into syllables</p>
+
+<p>Some samples: <br>
+<span class="sample">ပိုက်</span><br>
+<span class="sample">ခြင်း</span><br>
+<span class="sample">အအေးမိ</span><br>
+<span class="sample">ကဆာဘလန်ကာမြို့</span> (Casablanca [city])<br>
+<span class="sample">လက်နှိပ်ကွက်</span> (keyboard)<br>
+<span class="sample">ပိုက်ဆံထုတ်စက်</span> (cash machine/ATM)<br>
+</p>
+
+<form>
+<textarea id="mya_word"></textarea> 
+<br><input type="checkbox" id="nice_alts" checked>Nice Alternates? | <input type="checkbox" id="to_manual">Manually syllabified?
+<br><br>
+<input id="convert_all_btn" type="button" value="&raquo; Romanise!">
+<input id="convert_btn" type="button" value="&raquo; IPA Only">
+</form>
+Romanised:
+<textarea id="ipa_field" contenteditable="true" readonly></textarea>
+</body>
+<script src="underscore-min.js"></script>
+<script src="romanisations.js"></script>
+<script src="mya2rom.js"></script>
+<script>
+
+var mya_word = document.getElementById("mya_word");
+var to_manual = document.getElementById("to_manual")
+var nice_alts = document.getElementById("nice_alts")
+var convert_btn = document.getElementById("convert_btn");
+var convert_all_btn = document.getElementById("convert_all_btn");
+var samples = document.getElementsByClassName("sample");
+var version = document.getElementById("version");
+
+version.textContent = (m2r_VERSION) ? "v." + m2r_VERSION : "v.0.3 or older";
+
+for (sample of samples){
+	sample.addEventListener("click", function(){
+		mya_word.value = this.textContent;
+	}, false);
+}
+
+var ipa_field = document.getElementById("ipa_field");
+var ipa_field2 = document.getElementById("ipa_field2");
+
+convert_btn.addEventListener("click", function(){
+	if(mya_word.value.trim() != ""){ 
+		ipa_field.innerHTML = mya2rom(mya_word.value.trim(), "ipa", nice_alts.checked, to_manual.checked).trim();
+	}
+});
+
+convert_all_btn.addEventListener("click", function(){
+	if(mya_word.value.trim() != ""){ 
+		ipa_field.innerHTML = mya2rom_all(mya_word.value.trim(), nice_alts.checked, to_manual.checked).join (" ¦ ");
+	}
+});
+
+
+
+ipa_field.addEventListener("focus", function(){
+	this.select();
+});
+
+</script>
+</html>

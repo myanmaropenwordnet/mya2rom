@@ -61,12 +61,12 @@ The Wikipedia and Wiktionary resources are under the [Creative Commons Attributi
 ## TODO
 - [x] Investigate possibility of displaying alternatives as full syllables, instead of using "/" per alt-letter, to make things more readable.
 	- this was done in 0.4
-- [] LONG TERM: extend to cover other romanisation systems
+- [ ] LONG TERM: extend to cover other romanisation systems
 	- We now have MLCTS and the modified MLCTS("MLCTS2"), but others will be added progressively.
 	
 - To ensure stacking order for diacritics, or letters are uniform or normalised. 
 	- [x] asat and anusvara order
 		- asat-aukmyit order will now be normalised to aukmyit-asat order
-	- [] usage of ၀ (digit 0) for ဝ (letter /w/)
+	- [ ] usage of ၀ (digit 0) for ဝ (letter /w/)
 	- WIKT's auto-romaniser performs this check and normalisation, so we can do something similar.
 		- Wait... does it? I was sure it did, but I can't find that part now...
