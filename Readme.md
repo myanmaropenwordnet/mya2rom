@@ -2,6 +2,8 @@
 
 ## About
 
+### Introduction
+
 Mya2Rom is a simple script --- Javascript-based at the moment --- that converts Burmese script into various romanisation systems.
 At present, it converts it into:
 - International Phonetic Alphabet (IPA)
@@ -16,16 +18,54 @@ At present, it converts it into:
 	- these are based on phonetic and orthgraphical transcriptions, respectively
 	- **Note:** The simplified systems are still works-in-progress
 	
+### Attribution & Acknowledgements
+	
 This script began as only Mya2IPA, and is based mainly on the Python script by [Thura Hlaing](https://gist.github.com/trhura),
 particularly the Burmese letter and IPA letter equivalences. 
 
-The method used to perform syllable splitting is Wiktionary template's [auto-IPA script](https://en.wiktionary.org/wiki/Module:my-pron).
+The method used to perform syllable splitting is based on Wiktionary template's [auto-IPA script](https://en.wiktionary.org/wiki/Module:my-pron).
 
-Extended romanisation tables based on [Wikipedia's <Burmese Alphabet>] article and [Wiktionary's <Burmese transliteration>](https://en.wiktionary.org/wiki/Wiktionary:Burmese_transliteration) page
+Extended romanisation tables based on [Wikipedia's 'Burmese Alphabet' article](https://en.wikipedia.org/wiki/Burmese_alphabet) and [Wiktionary's 'Burmese transliteration' page](https://en.wiktionary.org/wiki/Wiktionary:Burmese_transliteration)
+
 IPA sound/pronunciation change rules based on abovementioned Wikipedia <Burmese Alphabet> article.
 
 The Wikipedia and Wiktionary resources are under the [Creative Commons Attribution-ShareAlike License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
 
+## Using MYA2ROM
+
+### Just the romanisations
+
+If you only wish to obtain the romanisations of the Burmese words, you can just use the HTML file _mya_rom.html_.
+The file lets you input a Burmese word and obtain the transcriptions directly.
+
+
+### As part of another page/script
+
+You only need _mya2rom.js_ and _romanisations.js_ as the script source files.
+
+Then, anywhere in the script, call the functions ``mya2rom`` or ``mya2rom_all``.
+
+The main difference is that ``mya2rom`` allows you to specify the transcription system you want to use, while ``mya2rom_all`` will return an _array_ containing romanisations for all the transcription systems.
+
+``mya2rom`` is called like so: ``mya2rom(<word:string>, <system:string>)``
+
+``mya2rom_all`` is called like so: ``mya2rom_all(<word:string>)``
+
+_These have other optional arguments (to be added to this readme)_
+
+The available systems are: ``ipa``, ``mlcts``, ``mlcts2``, ``simple``, ``simple2``
+
+Example:
+```javascript
+// To obtain IPA transcription for မြို့ "town/city"
+mya2rom("မြို့", "ipa"); // returns "mjo̰"
+
+// To obtain MLCTS2 transcription
+mya2rom("မြို့", "mlcts2"); // returns "mjou."
+
+// To obtain transcriptions for all available systems
+mya2rom_all("မြို့"); // returns array ["mjo̰", "mrui.", "mjou.", "my|o,ou|", "myui"]
+```
 
 ## Updates
 
