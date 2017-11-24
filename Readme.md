@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Mya2Rom is a simple script --- Javascript-based at the moment --- that converts Burmese script into various romanisation systems.
+Mya2Rom is a simple script — Javascript-based at the moment — that converts Burmese script into various romanisation systems.
 At present, it converts it into:
 - International Phonetic Alphabet (IPA)
 	- namely, the flavour used in Wikipedia. One noticeable feature is the use of 'N' instead of nasalised vowels.
@@ -20,8 +20,7 @@ At present, it converts it into:
 	
 ### Attribution & Acknowledgements
 	
-This script began as only Mya2IPA, and is based mainly on the Python script by [Thura Hlaing](https://gist.github.com/trhura),
-particularly the Burmese letter and IPA letter equivalences. 
+This script began as only Mya2IPA, with Burmese-letter<>IPA correspondences based mainly on the _to-ipa.py_ Python script by [Thura Hlaing](https://gist.github.com/trhura), which is released on public domain.
 
 The method used to perform syllable splitting is based on Wiktionary template's [auto-IPA script](https://en.wiktionary.org/wiki/Module:my-pron).
 
