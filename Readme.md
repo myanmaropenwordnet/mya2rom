@@ -47,15 +47,20 @@ Then, anywhere in the script, call the functions ``mya2rom`` or ``mya2rom_all``.
 
 The main difference is that ``mya2rom`` allows you to specify the transcription system you want to use, while ``mya2rom_all`` will return an _array_ containing romanisations for all the transcription systems.
 
-``mya2rom`` is called like so: ``mya2rom(<word:string>, <system:string>)``
+#### Using the functions
+``mya2rom(<word:string>, <system:string>, [<show_nice_alts:boolean>, <is_manual:boolean>])``, returns a STRING.
 
-``mya2rom_all`` is called like so: ``mya2rom_all(<word:string>)``
+``mya2rom_all(<word:string>, [<show_nice_alts:boolean>, <is_manual:boolean>])``, returns an ARRAY.
 
-_These have other optional arguments (to be added to this readme)_
+For ``mya2rom``, the available transcription systems are: ``ipa``, ``mlcts``, ``mlcts2``, ``simple``, ``simple2``
 
-The available systems are: ``ipa``, ``mlcts``, ``mlcts2``, ``simple``, ``simple2``
+**Note:** The system must be explicitly stated. I've not provided a default option yet (0.4.2, maybe?).
 
-Example:
+Both functions have two optional arguments:
+- ``<show_nice_alts:boolean>``  whether to show alternate segments as complete syllables, or just show alternatives within the word itself (using pipes and commas); default FALSE
+- ``<is_manual:boolean>`` : whether syllable splitting was performed manually, or should be performed automatically; default FALSE (automatic syllabification)
+
+#### Examples
 ```javascript
 // To obtain IPA transcription for မြို့ "town/city"
 mya2rom("မြို့", "ipa"); // returns "mjo̰"
@@ -65,6 +70,9 @@ mya2rom("မြို့", "mlcts2"); // returns "mjou."
 
 // To obtain transcriptions for all available systems
 mya2rom_all("မြို့"); // returns array ["mjo̰", "mrui.", "mjou.", "my|o,ou|", "myui"]
+
+// To obtain transcriptions for all available systems, with nice alternatives
+mya2rom_all("မြို့", true); // returns array ["mjo̰", "mrui.", "mjou.", "myo|myou", "myui"]
 ```
 
 ## Updates
