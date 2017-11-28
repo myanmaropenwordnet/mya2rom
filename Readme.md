@@ -2,7 +2,7 @@
 
 ## About
 
-## Pre-Intro
+### Pre-Intro
 
 The script has been used internally for me to generate IPA and such for the Myanmar Open Wordnet, but eventually I thought I would just put it out here. I'm very new to all these, so the code isn't exactly in any good shape, and I'm also fiddling with GitHub and getting the hand of it. Any comments and help on these would definitely be appreciated. :)
 
