@@ -2,9 +2,14 @@
 
 ## About
 
+## Pre-Intro
+
+The script has been used internally for me to generate IPA and such for the Myanmar Open Wordnet, but eventually I thought I would just put it out here. I'm very new to all these, so the code isn't exactly in any good shape, and I'm also fiddling with GitHub and getting the hand of it. Any comments and help on these would definitely be appreciated. :)
+
 ### Introduction
 
 Mya2Rom is a simple script — Javascript-based at the moment — that converts Burmese script into various romanisation systems.
+
 At present, it converts it into:
 - International Phonetic Alphabet (IPA)
 	- namely, the flavour used in Wikipedia. One noticeable feature is the use of 'N' instead of nasalised vowels.
@@ -74,7 +79,11 @@ mya2rom_all("မြို့"); // returns array ["mjo̰", "mrui.", "mjou.", "my
 mya2rom_all("မြို့", true); // returns array ["mjo̰", "mrui.", "mjou.", "myo|myou", "myui"]
 ```
 
-## Updates
+## More Info & Progress
+
+The sections below were originally in the header comments of the main script itself, but are now placed and updated here. (see _Old Readme.md_ for the last in-script comments, from 0.4.1)
+
+### Updates
 
 - 23 Nov 2017
 	- Not an update; 0.4.1 is the first GitHub version.
@@ -84,7 +93,7 @@ mya2rom_all("မြို့", true); // returns array ["mjo̰", "mrui.", "mjou.
   
 [Older, pre-0.4.1 updates are in _Old Readme.txt_]
 
-## Limitations
+### Limitations
 - Not a limitation per-se, but standalone consonants are automatically given an inherent letter (နွှ => n̥wa̰)
 - It does not convert "stacked" letters
 - Asat'ed letters (used in transliterations (Like "t" in Watson)) do not currently convert successfully all the time.
@@ -99,13 +108,13 @@ mya2rom_all("မြို့", true); // returns array ["mjo̰", "mrui.", "mjou.
 - It does not transcribe correct words derived from Pali or Sanskrit that has special/different pronunciations
 	- Eg: ဘုရား "Buddha" would be transcribed as /bṵ.já/ instead of /pʰa.já/, as ordinarily, ဘု is /bṵ/
 
-## Bugs
+### Bugs
 - A problem detecting ဦး (high-tone ဦ)
 - Some problems with words like သင်္ဘော, where ဘော is not transcribed correctly... (probably also because of stacking?)
 - Some problems with ယျ, which occurs in မေတ္တေယျဘုရား
 	- ယျ becomes /jj-/, which is generally just merged into /j-/
 			
-## TODO
+### TODO
 - [x] Investigate possibility of displaying alternatives as full syllables, instead of using "/" per alt-letter, to make things more readable.
 	- this was done in 0.4
 - [ ] LONG TERM: extend to cover other romanisation systems
