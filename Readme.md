@@ -124,5 +124,6 @@ The sections below were originally in the header comments of the main script its
 	- [x] asat and anusvara order
 		- asat-aukmyit order will now be normalised to aukmyit-asat order
 	- [ ] usage of ၀ (digit 0) for ဝ (letter /w/)
+		- at the moment, both correspond to /w/. Not optimum, of course, since the actual digit will be transcribed wrongly.
 	- WIKT's auto-romaniser performs this check and normalisation, so we can do something similar.
 		- Wait... does it? I was sure it did, but I can't find that part now...
