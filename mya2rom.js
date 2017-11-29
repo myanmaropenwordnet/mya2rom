@@ -431,7 +431,7 @@ function _showAlts(ipa_str){
 function mya2rom_all(word, show_nice_alts=false, is_manual=false){
   var converted_arr = [];
   for (var s = 0; s < SYSTEMS.length; s++){
-    converted_arr.push(mya2rom(word, SYSTEMS[s], show_nice_alts, false).trim());
+    converted_arr.push(mya2rom(word, SYSTEMS[s], show_nice_alts, is_manual).trim());
   }
   return converted_arr;
 }
