@@ -28,7 +28,7 @@
  */
  
 
-const m2r_VERSION = "0.4.1";
+const m2r_VERSION = "0.4.2";
 	// ES2015 Object.freeze(), to prevent changes to [m2r_VERSION]
 	Object.freeze(m2r_VERSION);
  

@@ -85,6 +85,9 @@ The sections below were originally in the header comments of the main script its
 
 ### Updates
 
+- 29 Nov 2017
+	- ``mya2rom_all`` now honours the ``is_manual`` argument, when previously it was hard-coded and defaulted to _false_ regardless.
+
 - 23 Nov 2017
 	- Not an update; 0.4.1 is the first GitHub version.
 
