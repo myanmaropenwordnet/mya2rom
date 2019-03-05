@@ -28,7 +28,7 @@
  */
  
 
-const m2r_VERSION = "0.4.2";
+const m2r_VERSION = "0.4.3";
 	// ES2015 Object.freeze(), to prevent changes to [m2r_VERSION]
 	Object.freeze(m2r_VERSION);
  
@@ -184,6 +184,9 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 		 
 		 		ipa = ipa.replace(/khj/g, "ch");
 				ipa = ipa.replace(/(.){1}(DV)/g, "h$1"); // replaces [C]DV with proper devoicing h[C] structure
+
+				// 05 Mar 2019: /ngj/ => /nj/
+				ipa = ipa.replace(/ngj/g, "nj");
 		 
 		 } else if (system == "simple"){
 		   
@@ -197,12 +200,18 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 				ipa = ipa.replace(/DV/g, ""); // Remove other DV
 				ipa = ipa.replace(/ly/g, "|ly,sh|");
 				ipa = ipa.replace(/thy/g, "sh");
+
+				// 05 Mar 2019: /ngy/ => /ny/
+				ipa = ipa.replace(/ngy/g, "ny");
 		   
 		 } else if (system == "simple2"){
 		  
 				// In Simple2, the transcription /th/ replaces /s/ in MLCTS, so we have to take into account the two-letter-ness of it first.
 				ipa = ipa.replace(/(th)(DV)/g, "h$1"); // thDV -> hth
 				ipa = ipa.replace(/(.){1}(DV)/g, "h$1"); // replaces [C]DV with proper devoicing h[C] structure
+
+				// 05 Mar 2019: /ngy/ => /ny/
+				ipa = ipa.replace(/ngy/g, "ny");
 		   
 		 }
 		 
