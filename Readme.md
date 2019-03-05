@@ -108,7 +108,9 @@ The sections below were originally in the header comments of the main script its
 	  	- (for example, ရင်းပင် will be jɪ́ɴ pɪ̀ɴ instead of jɪ́ɴ bɪ̀ɴ)
 	  - See https://en.wikipedia.org/wiki/Burmese_language#Consonants)
 - Unlike for schwas, the alternatives are not provided, to make the results cleaner.
-- It does not transcribe correct words derived from Pali or Sanskrit that has special/different pronunciations
+- It does not transliterate alternative pronunciations.
+	- Eg: ဝပ် being /wuʔ/, and also /waʔ/ if used to mean "watt"
+- It does not transliterate correctly words derived from Pali or Sanskrit that has special/different pronunciations
 	- Eg: ဘုရား "Buddha" would be transcribed as /bṵ.já/ instead of /pʰa.já/, as ordinarily, ဘု is /bṵ/
 
 ### Bugs
@@ -116,6 +118,7 @@ The sections below were originally in the header comments of the main script its
 - Some problems with words like သင်္ဘော, where ဘော is not transcribed correctly... (probably also because of stacking?)
 - Some problems with ယျ, which occurs in မေတ္တေယျဘုရား
 	- ယျ becomes /jj-/, which is generally just merged into /j-/
+- (See the opened Issues for this repository for more...)
 			
 ### TODO
 - [x] Investigate possibility of displaying alternatives as full syllables, instead of using "/" per alt-letter, to make things more readable.
