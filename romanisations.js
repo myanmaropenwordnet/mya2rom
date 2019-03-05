@@ -13,7 +13,8 @@
 		- Simple 2: Same objective as above, but adhering to orthograhy instead. (Highly similar to MLCTS, save tonal information and some modernised sounds for letters)
 	(values are stored in the above order)
 	
-	UPDATES
+  UPDATES
+  > 05 Mar 2019: Fixed Simple2 for င (/g/ should be /ng/)
 	> 05 Jul 2017: Sounds with alternatives are now separated by commas and enclosed in vertical bars (eg: |o,ou|)
 	
 */
@@ -24,7 +25,7 @@ var consonants = {
   "ခ" 	: 	["kʰ", "hk", "kh", "kh", "k"],
   "ဂ" 	: 	["ɡ", "g", "g", "g", "g"],
   "ဃ" 	: 	["ɡ", "gh", "g", "g", "g"],
-  "င" 	: 	["ŋ", "ng", "ng", "ng", "g"],
+  "င" 	: 	["ŋ", "ng", "ng", "ng", "ng"],
   "စ" 	: 	["s", "c", "s", "s", "s"],  // "z" as the voiced counterpart
   "ဆ" 	: 	["sʰ", "hc", "hs", "s", "hs"], // "z" as the voiced counterpart; "s" used for simplified to not confuse with /ʃ/ sound
   "ဇ" 	: 	["z", "j", "z", "z", "z"],
