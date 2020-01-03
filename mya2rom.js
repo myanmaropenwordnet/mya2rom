@@ -55,7 +55,7 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 	// Collapse spaces into none, or multiple spaces into one space for manual
 	word = (is_manual) ? word.replace(/(\s){2,}/g, " ") : word.replace(/(\s){1,}/g, "");
 	
-	// TODO: Re-order some stacked diacritics (part. asat and anusvara), as well as usage of ၀ (digit 0) for ဝ (letter /w/)
+	// TODO: Re-order some stacked diacritics (part. asat and anusvara)
 	// Detect asat-aukmyit order and change to aukmyit-asat order (as used in SEALang, ALT NOVA)
 	if(word.search(/(်)(့)/g) != -1){
 	  word = word.replace(/(်)(့)/g, "$2$1");
