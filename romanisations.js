@@ -146,9 +146,9 @@ var vowels = {
   "ာ့"		:		["a̰" , "a." , "a" , "a" , "a"],
   "ဲ"		:		["ɛ́" , "ai:" , "e:" , "e" , "ai"],
   "ေ"		:		["è" , "e" , "ei" , "ei" , "e"],
+  "့"   :   ["ṵ" , "u." , "u." , "u" , "u"], // 03 Jan 2020: Added provision for auk-myit–induced creaky tone; placed above the others so it will take precedence.
   "ူ"		:		["ù" , "u" , "u" , "u" , "u"],
   "ု"		:		["ṵ" , "u." , "u." , "u" , "u"],
-  "့"   :   ["ṵ" , "u." , "u." , "u" , "u"],
   "ီ"		:		["ì" , "i" , "i" , "i" , "i"],
   "ိ"		:		["ḭ" , "i." , "i." , "i" , "i"],
   "ံ"		:		["àɴ" , "am" , "an" , "an" , "am"],
