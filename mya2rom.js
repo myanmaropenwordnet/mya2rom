@@ -28,7 +28,7 @@
  */
  
 
-const m2r_VERSION = "0.4.4";
+const m2r_VERSION = "0.4.3";
 	// ES2015 Object.freeze(), to prevent changes to [m2r_VERSION]
 	Object.freeze(m2r_VERSION);
  
@@ -124,11 +124,22 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 			}
 		}
 		
-		// The ʊ symbol and "w" should not co-exist in a syllable.
-		// For example, in the case of kwʊ̀ɴ (for ကွန်), which should be just kʊ̀ɴ
 		
+		// The ʊ symbol and "w" should not co-exist side-by-side in a syllable.
+		// For example, in the case of kwʊ̀ɴ (for ကွန်), which should be just kʊ̀ɴ
 		if (syllable_ipa.search("\u028A") != -1){
-		    syllable_ipa = syllable_ipa.replace("w", "");
+		  syllable_ipa = syllable_ipa.replace("w", "");
+		} 
+
+		// 03 Jan 2020: Likewise for "ww" combinations in MLCTS and Simple2, and "wu" in MLCTS2.
+		// Although detection is slightly different; we detect the actual "ww" and "wu" combination.
+		// (Shift to sound change? Keep here for now.)
+
+		if (syllable_ipa.search("ww") != -1){
+			syllable_ipa = syllable_ipa.replace("ww", "w");
+		}
+		if (syllable_ipa.search("wu") != -1){
+			syllable_ipa = syllable_ipa.replace("wu", "u");
 		}
     
 		// TODO: Deal with /(w)a/ to /u/ pronunciation for other systems
