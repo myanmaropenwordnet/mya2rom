@@ -28,7 +28,7 @@
  */
  
 
-const m2r_VERSION = "0.4.3";
+const m2r_VERSION = "0.4.4";
 	// ES2015 Object.freeze(), to prevent changes to [m2r_VERSION]
 	Object.freeze(m2r_VERSION);
  
@@ -145,7 +145,7 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 	}
 	
 	
-		// ****IPA ONLY****
+		// **** SOUND CHANGES ****
 		
 		// Apply sound-change rules happening for certain consonant clusters
 		// These take into account cases like ကြ and ခြ being palatalised to ʧ/tɕ and ʧʰ/tɕʰ
@@ -187,6 +187,9 @@ function mya2rom(word, system, show_nice_alts=false, is_manual=false){
 
 				// 05 Mar 2019: /ngj/ => /nj/
 				ipa = ipa.replace(/ngj/g, "nj");
+
+				// 03 Jan 2020: /hj/ => /sh/
+				ipa = ipa.replace(/hj/g, "sh");
 		 
 		 } else if (system == "simple"){
 		   
